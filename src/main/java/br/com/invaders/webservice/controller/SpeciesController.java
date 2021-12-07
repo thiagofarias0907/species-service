@@ -32,7 +32,7 @@ public class SpeciesController implements  Controller{
 
     @GetMapping("/{id}")
     public Object getById(@PathVariable Long id) {
-        return speciesRepository.getById(id);
+        return speciesRepository.findById(id);
     }
 
     @Override
