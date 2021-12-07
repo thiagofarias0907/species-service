@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -55,10 +56,16 @@ public class OccurrenceController implements Controller {
     }
 
     @GetMapping("/filter")
-    public List getAllWithFilters(@RequestParam Long kingdomId, @RequestParam Long specieId, @RequestParam Long stateId) {
-        Kingdom kingdom = kingdomRepository.findById(kingdomId).orElse(null);
-        State state = stateRepository.findById(stateId).orElse(null);
-        Specie specie = speciesRepository.findById(specieId).orElse(null);
+    public List getAllWithFilters(@RequestParam @Nullable Long kingdomId, @RequestParam @Nullable Long specieId, @RequestParam @Nullable Long stateId) {
+        Kingdom kingdom = null;
+        State   state   = null;
+        Specie  specie  = null;
+        if (kingdomId != null)
+            kingdom = kingdomRepository.findById(kingdomId).orElse(null);
+        if (stateId != null)
+            state   = stateRepository.findById(stateId).orElse(null);
+        if (specieId != null)
+            specie  = speciesRepository.findById(specieId).orElse(null);
 
 
         if (specie !=  null) {
@@ -76,8 +83,10 @@ public class OccurrenceController implements Controller {
                 return  this.occurrenceRepository.findFromSpeciesAndState(specieNamesList,state.getState());
             return  this.occurrenceRepository.findFromSpecies(specieNamesList);
 
+        } else if (state != null) {
+            return this.occurrenceRepository.findAllByState(state.getState());
         }
-        return this.occurrenceRepository.findAllByState(state.getState());
+        return new ArrayList();
     }
 //
 //
