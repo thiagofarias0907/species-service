@@ -1,14 +1,21 @@
 package br.com.invaders.webservice.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "municipality")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Municipality {
 
 
     @Id
     @Column(name = "municipio_id")
-    private int id;
+    private Long id;
     @Column(name = "municipio")
     private String municipality;
     @Column(name = "state_id")
@@ -18,7 +25,7 @@ public class Municipality {
     public Municipality() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

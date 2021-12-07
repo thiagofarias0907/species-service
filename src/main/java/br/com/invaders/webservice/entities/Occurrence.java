@@ -1,16 +1,21 @@
 package br.com.invaders.webservice.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-public class Occurence {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "occurrence")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Occurrence {
 
 
-//    @Id
-//    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "scientific_name")
-    private Specie scientificName;
+    private String scientificName;
     private String latitude;
     private String longitude;
 
@@ -26,17 +31,17 @@ public class Occurence {
 //    private String coord_utm_y;
 //    private String data_source;
     private String location;
-    @Column(name = "")
-    private String protected_area;
+    @Column(name = "protected_area")
+    private String protectedArea;
 //    private Municipality municipio;
 //    private State state;
     private String municipio;
     private String state;
 
-    public Occurence() {
+    public Occurrence() {
     }
 
-    public Specie getScientificName() {
+    public String getScientificName() {
         return scientificName;
     }
 
@@ -72,8 +77,8 @@ public class Occurence {
         return location;
     }
 
-    public String getProtected_area() {
-        return protected_area;
+    public String getProtectedArea() {
+        return protectedArea;
     }
 
     public String getMunicipio() {

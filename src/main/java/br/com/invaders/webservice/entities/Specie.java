@@ -11,7 +11,7 @@ public class Specie {
 
     @Id
     @Column(name = "species_id")
-    private int id;
+    private Long id;
     @Column(name = "kingdom_id")
     private String kingdomId;
     private String kingdom	 ;
@@ -92,16 +92,16 @@ public class Specie {
 
     }
 
-    public Specie(int id, String scientificName) {
+    public Specie(Long id, String scientificName) {
         this.id = id;
         this.scientificName = scientificName;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

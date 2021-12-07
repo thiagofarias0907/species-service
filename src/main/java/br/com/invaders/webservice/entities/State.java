@@ -15,20 +15,20 @@ public class State {
     //state_id
     @Id
     @Column(name = "state_id")
-    private int id;
+    private Long id;
     private String state;
     private String uf;
 
     public State() {
     }
 
-    public State(int id, String state, String uf) {
+    public State(Long id, String state, String uf) {
         this.id = id;
         this.state = state;
         this.uf = uf;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

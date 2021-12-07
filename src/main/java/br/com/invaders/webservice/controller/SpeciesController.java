@@ -5,7 +5,6 @@ import br.com.invaders.webservice.http.KinghostAPI;
 import br.com.invaders.webservice.repositories.SpeciesRepository;
 import br.com.invaders.webservice.utils.SpeciesKeys;
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import br.com.invaders.webservice.parameters.*;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,6 +27,12 @@ public class SpeciesController implements  Controller{
     @GetMapping("")
     public List getAll() {
         return speciesRepository.findAll();
+    }
+
+
+    @GetMapping("/{id}")
+    public Object getById(@PathVariable Long id) {
+        return speciesRepository.getById(id);
     }
 
     @Override
@@ -51,12 +55,12 @@ public class SpeciesController implements  Controller{
         JSONArray allSpecies = kinghostAPI.get(KinghostAPI.ALL_SPECIES_URL, allSpeciesParameter);
 
 
-        this.insertAll(renameColumns(allSpecies).toList());
+        this.insertAll(processData(allSpecies).toList());
 
         return allSpecies.toList();
     }
 
-    private JSONArray renameColumns(JSONArray specieList){
+    private JSONArray processData(JSONArray specieList){
         Map<String,String> speciesKeysMap = new SpeciesKeys().getHashMap();
         JSONArray newJsonArray = new JSONArray();
         specieList.forEach( object -> {

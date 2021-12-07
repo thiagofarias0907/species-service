@@ -1,20 +1,16 @@
 package br.com.invaders.webservice.parameters;
 
-public class AllSpeciesParameter {
+public class AllSpeciesParameter extends Parameter{
 
-    private int speciesType;
     private int pageSize;
 
     public AllSpeciesParameter(int species_type, int pageSize) {
-        this.speciesType = species_type;
+        super(species_type);
         this.pageSize = pageSize;
     }
 
     @Override
     public String toString() {
-        if (speciesType > 0)
-            return "?speciesType=" + speciesType +"&pageSize=" + pageSize;
-        return "?speciesType=&pageSize=" + pageSize;
-
+        return super.toString()+"&pageSize=" + pageSize;
     }
 }
