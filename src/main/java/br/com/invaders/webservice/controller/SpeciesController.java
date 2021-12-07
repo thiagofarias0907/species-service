@@ -3,6 +3,7 @@ package br.com.invaders.webservice.controller;
 import br.com.invaders.webservice.entities.Specie;
 import br.com.invaders.webservice.http.KinghostAPI;
 import br.com.invaders.webservice.repositories.SpeciesRepository;
+import br.com.invaders.webservice.utils.KingdomEnum;
 import br.com.invaders.webservice.utils.SpeciesKeys;
 import com.google.gson.Gson;
 import org.json.JSONArray;
@@ -33,6 +34,17 @@ public class SpeciesController implements  Controller{
     @GetMapping("/{id}")
     public Object getById(@PathVariable Long id) {
         return speciesRepository.findById(id);
+    }
+
+    @GetMapping("/kingdom/{id}")
+    public List getByKingdomId(@PathVariable Long id){
+        return speciesRepository.findByKingdomId(id);
+    }
+
+
+    @GetMapping("/kingdom/name/{kingdom}")
+    public List getByKingdomName(@PathVariable String kingdom){
+        return speciesRepository.findByKingdom(kingdom);
     }
 
     @Override
@@ -69,6 +81,10 @@ public class SpeciesController implements  Controller{
             jsonObject.keySet().forEach(key -> {
                 newJsonObject.put(speciesKeysMap.get(key),jsonObject.get(key));
             });
+
+            //set Kingdom propper ID
+            newJsonObject.put("kingdomId",KingdomEnum.valueOf(newJsonObject.get("kingdom").toString()).getId());
+
             Gson gson = new Gson();
 //            JsonElement jsonElement = gson.toJsonTree(newJsonObject);
             Specie specie = gson.fromJson(newJsonObject.toString(), Specie.class);

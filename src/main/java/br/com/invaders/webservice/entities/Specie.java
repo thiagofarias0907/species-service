@@ -13,7 +13,7 @@ public class Specie {
     @Column(name = "species_id")
     private Long id;
     @Column(name = "kingdom_id")
-    private String kingdomId;
+    private Long kingdomId;
     private String kingdom	 ;
     private String phyllum	 ;
     @Column(name = "class_name")
@@ -105,11 +105,11 @@ public class Specie {
         this.id = id;
     }
 
-    public String getKingdomId() {
+    public Long getKingdomId() {
         return kingdomId;
     }
 
-    public void setKingdomId(String kingdomId) {
+    public void setKingdomId(Long kingdomId) {
         this.kingdomId = kingdomId;
     }
 
