@@ -36,6 +36,11 @@ public class SpeciesController implements  Controller{
         return speciesRepository.findById(id);
     }
 
+    @GetMapping("/name/{name}")
+    public Object getByScientificName(@PathVariable String name){
+        return speciesRepository.findByScientificName(name);
+    }
+
     @GetMapping("/kingdom/{id}")
     public List getByKingdomId(@PathVariable Long id){
         return speciesRepository.findByKingdomId(id);

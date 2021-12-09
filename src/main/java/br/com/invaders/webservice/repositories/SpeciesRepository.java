@@ -18,6 +18,7 @@ public interface SpeciesRepository extends JpaRepository<Specie,Long> {
     @Transactional
     List<Specie> findByKingdom(String kingdom);
 
+    @Transactional
     Specie findByScientificName(String scientificName);
 
 

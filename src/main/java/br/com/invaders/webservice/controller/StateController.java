@@ -32,6 +32,16 @@ public class StateController implements Controller {
         return this.stateRepository.findById(id);
     }
 
+    @GetMapping("/name/{name}")
+    public Object getByStateName(@PathVariable String name) {
+        return this.stateRepository.findByState(name);
+    }
+
+    @GetMapping("/uf/{uf}")
+    public Object getByUf(@PathVariable String uf) {
+        return this.stateRepository.findByUf(uf);
+    }
+
     @PostMapping("")
     @Override
     public List insertAll(List list) {
