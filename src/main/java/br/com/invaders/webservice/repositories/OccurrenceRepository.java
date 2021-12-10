@@ -25,5 +25,5 @@ public interface OccurrenceRepository extends JpaRepository<Occurrence,Long> {
             " WHERE scientific_name in :species")
     List<Occurrence> findFromSpecies(@Param("species") List<String> species);
 
-
+    List<Occurrence> findAll();
 }
