@@ -3,8 +3,8 @@ package br.com.invaders.webservice.utils;
 public enum KingdomEnum {
 
     Animalia("Animalia",1),
-    Monera  ("Monera",2),
-    Plantae ("Plantae",3),
+    Monera  ("Monera",3),
+    Plantae ("Plantae",2),
     Protista("Protista",4);
 
 
