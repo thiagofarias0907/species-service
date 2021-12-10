@@ -25,64 +25,64 @@ public class Specie {
     private String scientificName ;
     private String author	;
     @Column(name = "morphophysiology_description")
-    @Lob
+    
     private String morphophysiology;
-    @Lob
+    
     @Column(name = "native_distribution_area")
     private String nativeDistributionArea;
-    @Lob
+    
     @Column(name = "natural_environment")
     private String naturalEnvironment;
-    @Lob
+    
     @Column(name = "economic_use")
     private String economicUse;
-    @Lob
+    
     @Column(name = "world_invasive_places")
     private String worldInvasivePlaces;
-    @Lob
+    
     @Column(name = "invasion_preferential_environments")
     private String invasionPreferentialEnvironments;
-    @Lob
+    
     @Column(name = "biodiversity_impact")
     private String biodiversityImpact;
-    @Lob
+    
     @Column(name = "economic_impact")
     private String economicImpact;
-    @Lob
+    
     @Column(name = "social_impact")
     private String socialImpact;
-    @Lob
+    
     @Column(name = "health_impact")
     private String health_impact;
     @Column(name = "abundance_id")
     private int abundanceId;
-    @Lob
+    
     @Column(name = "risk_analysis")
     private String riskAnalysis;
-    @Lob
+    
     @Column(name = "physical_control")
     private String physicalControl;
-    @Lob
+    
     @Column(name = "chemical_control")
     private String chemicalControl;
-    @Lob
+    
     @Column(name = "control_biological")
 	private String controlBiological;
-    @Lob
+    
     @Column(name = "prevention")
 	private String prevention;
-    @Lob
+    
     @Column(name = "risk_analysis_type")
 	private String riskAnalysisType;
     @Column(name = "date_update")
 	private String dateUpdate;
-    @Lob
+    
     @Column(name = "species_type")
 	private String speciesType;
-    @Lob
+    
     @Column(name = "common_name")
 	private String commonName;
-    @Lob
+    
     @Column(name = "habitat")
 	private String habitat;
     @Column(name = "route_id")
