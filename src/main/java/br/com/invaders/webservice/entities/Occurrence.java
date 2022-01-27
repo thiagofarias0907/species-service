@@ -88,4 +88,23 @@ public class Occurrence {
     public String getState() {
         return state;
     }
+
+    @Override
+    public String toString() {
+        return "Occurrence{" +
+                "id=" + id +
+                ", scientificName='" + scientificName + '\'' +
+                ", latitude='" + latitude + '\'' +
+                ", longitude='" + longitude + '\'' +
+                ", latitudeDecimal='" + latitudeDecimal + '\'' +
+                ", longitudeDecimal='" + longitudeDecimal + '\'' +
+                ", datum='" + datum + '\'' +
+                ", zone='" + zone + '\'' +
+                ", band='" + band + '\'' +
+                ", location='" + location + '\'' +
+                ", protectedArea='" + protectedArea + '\'' +
+                ", municipio='" + municipio + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }

@@ -67,11 +67,12 @@ public class OccurrenceController implements Controller {
             state   = stateRepository.findById(stateId).orElse(null);
         if (specieId != null)
             specie  = speciesRepository.findById(specieId).orElse(null);
-
-        if (kingdomId == 0l){
-            if(state!=null)
-                return occurrenceRepository.findAllByState(state.getState());
-            return occurrenceRepository.findAll();
+        if (kingdomId != null) {
+            if (kingdomId == 0l) {
+                if (state != null)
+                    return occurrenceRepository.findAllByState(state.getState());
+                return occurrenceRepository.findAll();
+            }
         }
 
 
