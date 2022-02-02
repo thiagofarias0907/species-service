@@ -23,18 +23,9 @@ public class Occurrence {
     private String latitudeDecimal;
     @Column(name = "longitude_decimal")
     private String longitudeDecimal;
-    private String datum;
-    private String zone;
-    private String band;
-//    private String coord_unit;
-//    private String coord_utm_x;
-//    private String coord_utm_y;
-//    private String data_source;
     private String location;
     @Column(name = "protected_area")
     private String protectedArea;
-//    private Municipality municipio;
-//    private State state;
     private String municipio;
     private String state;
 
@@ -59,18 +50,6 @@ public class Occurrence {
 
     public String getLongitudeDecimal() {
         return longitudeDecimal;
-    }
-
-    public String getDatum() {
-        return datum;
-    }
-
-    public String getZone() {
-        return zone;
-    }
-
-    public String getBand() {
-        return band;
     }
 
     public String getLocation() {
@@ -98,9 +77,6 @@ public class Occurrence {
                 ", longitude='" + longitude + '\'' +
                 ", latitudeDecimal='" + latitudeDecimal + '\'' +
                 ", longitudeDecimal='" + longitudeDecimal + '\'' +
-                ", datum='" + datum + '\'' +
-                ", zone='" + zone + '\'' +
-                ", band='" + band + '\'' +
                 ", location='" + location + '\'' +
                 ", protectedArea='" + protectedArea + '\'' +
                 ", municipio='" + municipio + '\'' +

@@ -26,4 +26,10 @@ public interface OccurrenceRepository extends JpaRepository<Occurrence,Long> {
     List<Occurrence> findFromSpecies(@Param("species") List<String> species);
 
     List<Occurrence> findAll();
+
+    @Query(value = "SELECT o FROM Occurrence o " +
+            "WHERE (CAST(regexp_replace(latitude_decimal,',','.') AS double) - :latitude )/:latitude  between - :precision AND :precision " +
+            "  AND (CAST(regexp_replace(longitude_decimal,',','.') AS double) - :longitude)/:longitude between - :precision AND :precision")
+    List<Occurrence> findAllNearby(@Param("latitude") double latitude, @Param("longitude") double longitude, @Param("precision") double precision);
+
 }

@@ -143,6 +143,11 @@ public class OccurrenceController implements Controller {
 //        return new ArrayList();
 //    }
 
+    @GetMapping("/nearby")
+    public List getAllNearbyOccurrences(@RequestParam double latitude, @RequestParam double longitude, @RequestParam double precision){
+        return occurrenceRepository.findAllNearby(latitude,longitude,precision);
+    }
+
     @Override
     @GetMapping("/stats")
     public JSONObject getEstatisticas() {

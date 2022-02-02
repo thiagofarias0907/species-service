@@ -21,6 +21,10 @@ import static org.junit.jupiter.api.Assertions.*;
 @RunWith(SpringRunner.class)
 class OccurrenceControllerTest extends  OccurrenceController {
 
+    private final double centralLat = -25.0000;
+    private final double centralLon = -60.0000;
+    private final double precision  = 0.1;
+
     @Test
     void getSpeciesWithNullFiltersTest() {
         //CT01
@@ -87,5 +91,33 @@ class OccurrenceControllerTest extends  OccurrenceController {
         assertEquals(null,specieOccurrence.getProtectedArea());
 
 
+    }
+
+    @Test
+    void getNearbyOccurrence() {
+        List<Occurrence> occurrences = getAllNearbyOccurrences(centralLat, centralLon,precision);
+        assertNotNull(occurrences);
+        assertTrue(occurrences.size() > 0);
+        occurrences.forEach(occurrence -> {
+            assertTrue(isNearby(occurrence.getLatitudeDecimal(),occurrence.getLongitudeDecimal()));
+        });
+
+    }
+
+    private boolean isNearby(String latitude, String longitude){
+
+        if (latitude.isBlank() || longitude.isBlank())
+            return false;
+
+        double lat = Double.parseDouble(latitude.replace(',','.'));
+        double lon = Double.parseDouble(longitude.replace(',','.'));
+
+        if ( (lat - centralLat)/ centralLat > precision || (lat - centralLat)/ centralLat < -precision )
+            return false;
+
+        if ( (lon - centralLon)/ centralLon > precision || (lon - centralLon)/ centralLon < -precision )
+            return false;
+
+        return true;
     }
 }
