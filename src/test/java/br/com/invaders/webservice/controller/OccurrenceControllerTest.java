@@ -39,7 +39,7 @@ class OccurrenceControllerTest extends  OccurrenceController {
         assertTrue(speciesResponse.size() > 0);
 
         Occurrence specieOccurrence = speciesResponse.get(0);
-        assertFalse(specieOccurrence.getScientificName().isBlank());
+        assertFalse(specieOccurrence.getSpecie().getScientificName().isBlank());
         assertFalse(specieOccurrence.getLatitude().isBlank());
         assertFalse(specieOccurrence.getLongitude().isBlank());
         assertFalse(specieOccurrence.getLatitudeDecimal().isBlank());
@@ -59,7 +59,7 @@ class OccurrenceControllerTest extends  OccurrenceController {
         assertTrue(speciesResponse.size() > 0);
 
         Occurrence specieOccurrence = speciesResponse.get(0);
-        assertEquals("Aedes aegypti",specieOccurrence.getScientificName());
+        assertEquals("Aedes aegypti",specieOccurrence.getSpecie().getScientificName());
         assertEquals("23 05 58 S",specieOccurrence.getLatitude());
         assertEquals("51 56 38 W",specieOccurrence.getLongitude());
         assertEquals("-23,099444444444444444444444444",specieOccurrence.getLatitudeDecimal());
@@ -80,7 +80,7 @@ class OccurrenceControllerTest extends  OccurrenceController {
         assertTrue(speciesResponse.size() > 0);
 
         Occurrence specieOccurrence = speciesResponse.get(0);
-        assertEquals("Abramites hypselonotus",specieOccurrence.getScientificName());
+        assertEquals("Abramites hypselonotus",specieOccurrence.getSpecie().getScientificName());
         assertEquals("24 42 11 S",specieOccurrence.getLatitude());
         assertEquals("54 19 57 W",specieOccurrence.getLongitude());
         assertEquals("-24,703055555555555555555555556",specieOccurrence.getLatitudeDecimal());

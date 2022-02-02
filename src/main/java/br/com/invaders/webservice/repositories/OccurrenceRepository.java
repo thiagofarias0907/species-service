@@ -8,10 +8,14 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface OccurrenceRepository extends JpaRepository<Occurrence,Long> {
+//
+//    List<Occurrence> findAllByScientificName(String scientific_name);
+//
+//    List<Occurrence> findAllByScientificNameAndState(String scientific_name, String state);
 
-    List<Occurrence> findAllByScientificName(String scientific_name);
+    List<Occurrence> findAllBySpecie_scientificName(String scientific_name);
 
-    List<Occurrence> findAllByScientificNameAndState(String scientific_name, String state);
+    List<Occurrence> findAllBySpecie_scientificNameAndState(String scientific_name, String state);
 
     List<Occurrence> findAllByState(String state);
 

@@ -9,13 +9,16 @@ import javax.persistence.*;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Occurrence {
 
+    @ManyToOne()
+    @JoinColumn(name="scientific_name", referencedColumnName = "scientific_name",nullable=false,unique=false)
+    Specie specie;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "scientific_name")
-    private String scientificName;
+//    @Column(name = "scientific_name")
+//    private String scientificName;
     private String latitude;
     private String longitude;
 
@@ -32,9 +35,9 @@ public class Occurrence {
     public Occurrence() {
     }
 
-    public String getScientificName() {
-        return scientificName;
-    }
+//    public String getScientificName() {
+//        return scientificName;
+//    }
 
     public String getLatitude() {
         return latitude;
@@ -72,7 +75,7 @@ public class Occurrence {
     public String toString() {
         return "Occurrence{" +
                 "id=" + id +
-                ", scientificName='" + scientificName + '\'' +
+//                ", scientificName='" + scientificName + '\'' +
                 ", latitude='" + latitude + '\'' +
                 ", longitude='" + longitude + '\'' +
                 ", latitudeDecimal='" + latitudeDecimal + '\'' +
@@ -82,5 +85,13 @@ public class Occurrence {
                 ", municipio='" + municipio + '\'' +
                 ", state='" + state + '\'' +
                 '}';
+    }
+
+    public Specie getSpecie() {
+        return specie;
+    }
+
+    public void setSpecie(Specie specie) {
+        this.specie = specie;
     }
 }

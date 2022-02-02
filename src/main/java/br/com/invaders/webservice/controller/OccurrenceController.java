@@ -52,7 +52,7 @@ public class OccurrenceController implements Controller {
 
     @GetMapping("/{scientific_name}")
     public List getBySpecieId(@PathVariable String scientific_name) {
-        return this.occurrenceRepository.findAllByScientificName(scientific_name);
+        return this.occurrenceRepository.findAllBySpecie_scientificName(scientific_name);
     }
 
     @GetMapping("/filter")
@@ -78,8 +78,8 @@ public class OccurrenceController implements Controller {
 
         if (specie !=  null) {
             if (state != null)
-                return this.occurrenceRepository.findAllByScientificNameAndState(specie.getScientificName(), state.getState());
-            return this.occurrenceRepository.findAllByScientificName(specie.getScientificName());
+                return this.occurrenceRepository.findAllBySpecie_scientificNameAndState(specie.getScientificName(), state.getState());
+            return this.occurrenceRepository.findAllBySpecie_scientificName(specie.getScientificName());
         } else if (kingdom != null){
             List<Specie> specieList = speciesRepository.findByKingdomId(kingdomId);
             List specieNamesList = new ArrayList();

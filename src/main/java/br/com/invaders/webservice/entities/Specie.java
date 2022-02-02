@@ -1,13 +1,20 @@
 package br.com.invaders.webservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "specie")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Specie {
+public class Specie implements Serializable {
+
+//    @OneToMany(mappedBy = "specie", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JsonIgnore
+//    private List<Occurrence> occurrenceList;
 
     @Id
     @Column(name = "species_id")
