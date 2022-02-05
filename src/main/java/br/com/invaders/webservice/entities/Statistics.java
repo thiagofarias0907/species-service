@@ -17,33 +17,33 @@ public class Statistics {
     private long total_especie;
     private long total_reino;
     private long total_familia;
-    private long Acre;
-    private long Alagoas;
-    private long Amapá;
-    private long Amazonas;
-    private long Bahia;
-    private long Ceara;
-    private long Distrito_Federal;
-    private long Espírito_Santo;
-    private long Goiás;
-    private long Maranhão;
-    private long Mato_Grosso;
-    private long Mato_Grosso_do_Sul;
-    private long Minas_Gerais;
-    private long Pará;
-    private long Paraíba;
-    private long Paraná;
-    private long Pernambuco;
-    private long Piauí;
-    private long Rio_de_Janeiro;
-    private long Rio_Grande_do_Norte;
-    private long Rio_Grande_do_Sul;
-    private long Rondônia;
-    private long Roraima;
-    private long Santa_Catarina;
-    private long São_Paulo;
-    private long Sergipe;
-    private long Tocantins;
+    private long acre;
+    private long alagoas;
+    private long amapa;
+    private long amazonas;
+    private long bahia;
+    private long ceara;
+    private long distrito_Federal;
+    private long espirito_Santo;
+    private long goias;
+    private long maranhao;
+    private long mato_Grosso;
+    private long mato_Grosso_do_Sul;
+    private long minas_Gerais;
+    private long para;
+    private long paraiba;
+    private long parana;
+    private long pernambuco;
+    private long piaui;
+    private long rio_de_Janeiro;
+    private long rio_Grande_do_Norte;
+    private long rio_Grande_do_Sul;
+    private long rondonia;
+    private long roraima;
+    private long santa_Catarina;
+    private long sao_Paulo;
+    private long sergipe;
+    private long tocantins;
 
     public Statistics() {
     }
@@ -59,33 +59,33 @@ public class Statistics {
                 ", \"total_especie\":" + total_especie +
                 ", \"total_reino\":" + total_reino +
                 ", \"total_familia\":" + total_familia +
-                ", \"Acre\":\"" + Acre +  "\""+
-                ", \"Alagoas\":\"" + Alagoas +  "\""+
-                ", \"Amapá\":\"" + Amapá +  "\""+
-                ", \"Amazonas\":\"" + Amazonas +  "\""+
-                ", \"Bahia\":\"" + Bahia +  "\""+
-                ", \"Ceara\":\"" + Ceara +  "\""+
-                ", \"Distrito_Federal\":\"" + Distrito_Federal +  "\""+
-                ", \"Espírito_Santo\":\"" + Espírito_Santo +  "\""+
-                ", \"Goiás\":\"" + Goiás +  "\""+
-                ", \"Maranhão\":\"" + Maranhão +  "\""+
-                ", \"Mato_Grosso\":\"" + Mato_Grosso +  "\""+
-                ", \"Mato_Grosso_do_Sul\":\"" + Mato_Grosso_do_Sul +  "\""+
-                ", \"Minas_Gerais\":\"" + Minas_Gerais +  "\""+
-                ", \"Pará\":\"" + Pará +  "\""+
-                ", \"Paraíba\":\"" + Paraíba +  "\""+
-                ", \"Paraná\":\"" + Paraná +  "\""+
-                ", \"Pernambuco\":\"" + Pernambuco +  "\""+
-                ", \"Piauí\":\"" + Piauí +  "\""+
-                ", \"Rio_de_Janeiro\":\"" + Rio_de_Janeiro +  "\""+
-                ", \"Rio_Grande_do_Norte\":\"" + Rio_Grande_do_Norte +  "\""+
-                ", \"Rio_Grande_do_Sul\":\"" + Rio_Grande_do_Sul +  "\""+
-                ", \"Rondônia\":\"" + Rondônia +  "\""+
-                ", \"Roraima\":\"" + Roraima +  "\""+
-                ", \"Santa_Catarina\":\"" + Santa_Catarina +  "\""+
-                ", \"São_Paulo\":\"" + São_Paulo +  "\""+
-                ", \"Sergipe\":\"" + Sergipe +  "\""+
-                ", \"Tocantins\":\"" + Tocantins +  "\""+
+                ", \"acre\":\"" + acre +  "\""+
+                ", \"alagoas\":\"" + alagoas +  "\""+
+                ", \"amapa\":\"" + amapa +  "\""+
+                ", \"amazonas\":\"" + amazonas +  "\""+
+                ", \"bahia\":\"" + bahia +  "\""+
+                ", \"ceara\":\"" + ceara +  "\""+
+                ", \"distrito_Federal\":\"" + distrito_Federal +  "\""+
+                ", \"espirito_Santo\":\"" + espirito_Santo +  "\""+
+                ", \"goias\":\"" + goias +  "\""+
+                ", \"maranhao\":\"" + maranhao +  "\""+
+                ", \"mato_Grosso\":\"" + mato_Grosso +  "\""+
+                ", \"mato_Grosso_do_Sul\":\"" + mato_Grosso_do_Sul +  "\""+
+                ", \"minas_Gerais\":\"" + minas_Gerais +  "\""+
+                ", \"para\":\"" + para +  "\""+
+                ", \"paraiba\":\"" + paraiba +  "\""+
+                ", \"parana\":\"" + parana +  "\""+
+                ", \"pernambuco\":\"" + pernambuco +  "\""+
+                ", \"piaui\":\"" + piaui +  "\""+
+                ", \"rio_de_Janeiro\":\"" + rio_de_Janeiro +  "\""+
+                ", \"rio_Grande_do_Norte\":\"" + rio_Grande_do_Norte +  "\""+
+                ", \"rio_Grande_do_Sul\":\"" + rio_Grande_do_Sul +  "\""+
+                ", \"rondonia\":\"" + rondonia +  "\""+
+                ", \"roraima\":\"" + roraima +  "\""+
+                ", \"santa_Catarina\":\"" + santa_Catarina +  "\""+
+                ", \"sao_Paulo\":\"" + sao_Paulo +  "\""+
+                ", \"sergipe\":\"" + sergipe +  "\""+
+                ", \"tocantins\":\"" + tocantins +  "\""+
                 '}';
     }
 
@@ -122,110 +122,110 @@ public class Statistics {
     }
 
     public long getAcre() {
-        return Acre;
+        return acre;
     }
 
     public long getAlagoas() {
-        return Alagoas;
+        return alagoas;
     }
 
-    public long getAmapá() {
-        return Amapá;
+    public long getAmapa() {
+        return amapa;
     }
 
     public long getAmazonas() {
-        return Amazonas;
+        return amazonas;
     }
 
     public long getBahia() {
-        return Bahia;
+        return bahia;
     }
 
     public long getCeara() {
-        return Ceara;
+        return ceara;
     }
 
     public long getDistrito_Federal() {
-        return Distrito_Federal;
+        return distrito_Federal;
     }
 
-    public long getEspírito_Santo() {
-        return Espírito_Santo;
+    public long getEspirito_Santo() {
+        return espirito_Santo;
     }
 
-    public long getGoiás() {
-        return Goiás;
+    public long getGoias() {
+        return goias;
     }
 
-    public long getMaranhão() {
-        return Maranhão;
+    public long getMaranhao() {
+        return maranhao;
     }
 
     public long getMato_Grosso() {
-        return Mato_Grosso;
+        return mato_Grosso;
     }
 
     public long getMato_Grosso_do_Sul() {
-        return Mato_Grosso_do_Sul;
+        return mato_Grosso_do_Sul;
     }
 
     public long getMinas_Gerais() {
-        return Minas_Gerais;
+        return minas_Gerais;
     }
 
-    public long getPará() {
-        return Pará;
+    public long getPara() {
+        return para;
     }
 
-    public long getParaíba() {
-        return Paraíba;
+    public long getParaiba() {
+        return paraiba;
     }
 
-    public long getParaná() {
-        return Paraná;
+    public long getParana() {
+        return parana;
     }
 
     public long getPernambuco() {
-        return Pernambuco;
+        return pernambuco;
     }
 
-    public long getPiauí() {
-        return Piauí;
+    public long getPiaui() {
+        return piaui;
     }
 
     public long getRio_de_Janeiro() {
-        return Rio_de_Janeiro;
+        return rio_de_Janeiro;
     }
 
     public long getRio_Grande_do_Norte() {
-        return Rio_Grande_do_Norte;
+        return rio_Grande_do_Norte;
     }
 
     public long getRio_Grande_do_Sul() {
-        return Rio_Grande_do_Sul;
+        return rio_Grande_do_Sul;
     }
 
-    public long getRondônia() {
-        return Rondônia;
+    public long getRondonia() {
+        return rondonia;
     }
 
     public long getRoraima() {
-        return Roraima;
+        return roraima;
     }
 
     public long getSanta_Catarina() {
-        return Santa_Catarina;
+        return santa_Catarina;
     }
 
-    public long getSão_Paulo() {
-        return São_Paulo;
+    public long getSao_Paulo() {
+        return sao_Paulo;
     }
 
     public long getSergipe() {
-        return Sergipe;
+        return sergipe;
     }
 
     public long getTocantins() {
-        return Tocantins;
+        return tocantins;
     }
 }
