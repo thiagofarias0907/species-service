@@ -19,8 +19,8 @@ class StatisticsControllerTest extends StatisticsController {
     @Test
     void testGetSpecieStatistics() throws JSONException {
         long specieId = 6l;
-        List<Statistics> response = super.getSpecieStatistics(specieId);
-        JSONObject jsonObject = new JSONObject(response.get(0).toString());
+        Statistics response = super.getSpecieStatistics(specieId);
+        JSONObject jsonObject = new JSONObject(response.toString());
         assertTrue(jsonObject.has("species_id"));
         assertTrue(jsonObject.has("scientific_name"));
         assertTrue(jsonObject.has("kingdom_id"));

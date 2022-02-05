@@ -19,7 +19,7 @@ public class StatisticsController {
 
 
     @GetMapping("/specie/{specieId}")
-    protected List<Statistics> getSpecieStatistics(@PathVariable Long specieId) {
+    protected Statistics getSpecieStatistics(@PathVariable Long specieId) {
         return statisticsRepository.getSpecieStatistics(specieId);
     }
 }

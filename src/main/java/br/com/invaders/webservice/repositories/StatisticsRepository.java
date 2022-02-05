@@ -52,5 +52,5 @@ public interface StatisticsRepository  extends JpaRepository<Statistics,Long> {
             "FROM  origin as statistics \n" +
             "WHERE statistics.species_id = :specieId\n" +
             "GROUP BY 1,2,3,4,5,6,7,8", nativeQuery = true)
-    List<Statistics> getSpecieStatistics(Long specieId);
+    Statistics getSpecieStatistics(Long specieId);
 }
