@@ -1,9 +1,6 @@
 package br.com.invaders.webservice.controller;
 
-import br.com.invaders.webservice.entities.Kingdom;
-import br.com.invaders.webservice.entities.Occurrence;
-import br.com.invaders.webservice.entities.Specie;
-import br.com.invaders.webservice.entities.State;
+import br.com.invaders.webservice.entities.*;
 import br.com.invaders.webservice.http.KinghostAPI;
 import br.com.invaders.webservice.parameters.SpecieOccurenceParameter;
 import br.com.invaders.webservice.repositories.KingdomRepository;
@@ -48,6 +45,12 @@ public class OccurrenceController implements Controller {
     @PostMapping("")
     public List insertAll(@RequestBody List list) {
         return this.occurrenceRepository.saveAll(list);
+    }
+
+    @Override
+    @GetMapping("stats")
+    public long getEstatisticas() {
+        return occurrenceRepository.count();
     }
 
     @GetMapping("/{scientific_name}")
@@ -96,62 +99,10 @@ public class OccurrenceController implements Controller {
         }
         return new ArrayList();
     }
-//
-//
-//    @GetMapping("/filter")
-//    public List getAllWithKingdomAndStateFilters(@RequestParam Long kingdomId, @RequestParam Long stateId) {
-//        Kingdom kingdom = kingdomRepository.getById(kingdomId);
-//        State state = stateRepository.getById(stateId);
-//
-//
-//        if (kingdom != null){
-//            List<Specie> specieList = speciesRepository.findAllByKingdomId(kingdomId);
-//            List specieNamesList = new ArrayList();
-//            for (Object specie1 : specieList){
-//                specieNamesList.add(((Specie)specie1).getScientificName());
-//            }
-//
-//            if (state != null)
-//                return  this.occurrenceRepository.findFromSpeciesAndState(specieNamesList,state.getState());
-//            return  this.occurrenceRepository.findFromSpecies(specieNamesList);
-//
-//        }
-//        return this.occurrenceRepository.findAllByState(state.getState());
-//    }
-//
-//    @GetMapping("/filter")
-//    public List getAllWithKingdomFilter(@RequestParam Long kingdomId) {
-//        Kingdom kingdom = kingdomRepository.getById(kingdomId);
-//
-//        if (kingdom != null){
-//            List<Specie> specieList = speciesRepository.findAllByKingdomId(kingdomId);
-//            List specieNamesList = new ArrayList();
-//            for (Object specie1 : specieList){
-//                specieNamesList.add(((Specie)specie1).getScientificName());
-//            }
-//            return  this.occurrenceRepository.findFromSpecies(specieNamesList);
-//
-//        }
-//        return new ArrayList();
-//    }
-//
-//    @GetMapping("/filter")
-//    public List getAllWithStateFilter(@RequestParam Long stateId) {
-//        State state = stateRepository.getById(stateId);
-//        if (state.getState() != null)
-//            return this.occurrenceRepository.findAllByState(state.getState());
-//        return new ArrayList();
-//    }
 
     @GetMapping("/nearby")
     public List getAllNearbyOccurrences(@RequestParam double latitude, @RequestParam double longitude, @RequestParam double precision){
         return occurrenceRepository.findAllNearby(latitude,longitude,precision);
-    }
-
-    @Override
-    @GetMapping("/stats")
-    public JSONObject getEstatisticas() {
-        return null;
     }
 
 
@@ -179,7 +130,6 @@ public class OccurrenceController implements Controller {
                     newJsonObject.put(keysHashMap.get(key),jsonObject.get(key));
             });
             Gson gson = new Gson();
-//            JsonElement jsonElement = gson.toJsonTree(newJsonObject);
             Occurrence occurrence = gson.fromJson(newJsonObject.toString(), Occurrence.class);
             newJsonArray.put(occurrence);
         });
@@ -187,4 +137,35 @@ public class OccurrenceController implements Controller {
 
         return newJsonArray;
     }
+
+    @GetMapping("stats/specie/{specieId}")
+    protected long getCountSpeciesOccurrences(@PathVariable long specieId) {
+        long response = occurrenceRepository.countBySpecie_Id(specieId);
+        return response;
+    }
+
+    @GetMapping("stats/kingdom/name/{kingdom}")
+    protected long getCountKingdomOccurrences(@PathVariable String kingdom) {
+        long response = occurrenceRepository.countBySpecie_Kingdom(kingdom);
+        return response;
+    }
+
+    @GetMapping("stats/kingdom/{kingdomId}")
+    protected long getCountKingdomIdOccurrences(@PathVariable long kingdomId) {
+        long response = occurrenceRepository.countBySpecie_KingdomId(kingdomId);
+        return response;
+    }
+
+    @GetMapping("stats/family/{family}")
+    protected long getCountFamilyOccurrences(@PathVariable String family) {
+        long response = occurrenceRepository.countBySpecie_Family(family);
+        return response;
+    }
+
+    @GetMapping("stats/specie/{specieId}/state/{state}")
+    protected long getCountSpeciesByStateOccurrences(@PathVariable long specieId,@PathVariable  String state) {
+        long response = occurrenceRepository.countBySpecie_IdAndState(specieId,state);
+        return response;
+    }
+
 }

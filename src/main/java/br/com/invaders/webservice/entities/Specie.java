@@ -176,21 +176,21 @@ public class Specie implements Serializable {
         this.scientificName = scientificName;
     }
 
-    public String getAuthor() {
-        return author;
-    }
+//    public String getAuthor() {
+//        return author;
+//    }
+//
+//    public void setAuthor(String author) {
+//        this.author = author;
+//    }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getMorphophysiology() {
-        return morphophysiology;
-    }
-
-    public void setMorphophysiology(String morphophysiology) {
-        this.morphophysiology = morphophysiology;
-    }
+//    public String getMorphophysiology() {
+//        return morphophysiology;
+//    }
+//
+//    public void setMorphophysiology(String morphophysiology) {
+//        this.morphophysiology = morphophysiology;
+//    }
 
     public String getNativeDistributionArea() {
         return nativeDistributionArea;
@@ -264,45 +264,45 @@ public class Specie implements Serializable {
         this.health_impact = health_impact;
     }
 
-    public int getAbundanceId() {
-        return abundanceId;
-    }
-
-    public void setAbundanceId(int abundanceId) {
-        this.abundanceId = abundanceId;
-    }
-
-    public String getRiskAnalysis() {
-        return riskAnalysis;
-    }
-
-    public void setRiskAnalysis(String riskAnalysis) {
-        this.riskAnalysis = riskAnalysis;
-    }
-
-    public String getPhysicalControl() {
-        return physicalControl;
-    }
-
-    public void setPhysicalControl(String physicalControl) {
-        this.physicalControl = physicalControl;
-    }
-
-    public String getChemicalControl() {
-        return chemicalControl;
-    }
-
-    public void setChemicalControl(String chemicalControl) {
-        this.chemicalControl = chemicalControl;
-    }
-
-    public String getControlBiological() {
-        return controlBiological;
-    }
-
-    public void setControlBiological(String controlBiological) {
-        this.controlBiological = controlBiological;
-    }
+//    public int getAbundanceId() {
+//        return abundanceId;
+//    }
+//
+//    public void setAbundanceId(int abundanceId) {
+//        this.abundanceId = abundanceId;
+//    }
+//
+//    public String getRiskAnalysis() {
+//        return riskAnalysis;
+//    }
+//
+//    public void setRiskAnalysis(String riskAnalysis) {
+//        this.riskAnalysis = riskAnalysis;
+//    }
+//
+//    public String getPhysicalControl() {
+//        return physicalControl;
+//    }
+//
+//    public void setPhysicalControl(String physicalControl) {
+//        this.physicalControl = physicalControl;
+//    }
+//
+//    public String getChemicalControl() {
+//        return chemicalControl;
+//    }
+//
+//    public void setChemicalControl(String chemicalControl) {
+//        this.chemicalControl = chemicalControl;
+//    }
+//
+//    public String getControlBiological() {
+//        return controlBiological;
+//    }
+//
+//    public void setControlBiological(String controlBiological) {
+//        this.controlBiological = controlBiological;
+//    }
 
     public String getPrevention() {
         return prevention;
@@ -344,19 +344,19 @@ public class Specie implements Serializable {
         this.commonName = commonName;
     }
 
-    public String getHabitat() {
-        return habitat;
-    }
-
-    public void setHabitat(String habitat) {
-        this.habitat = habitat;
-    }
-
-    public int getRouteId() {
-        return routeId;
-    }
-
-    public void setRouteId(int routeId) {
-        this.routeId = routeId;
-    }
+//    public String getHabitat() {
+//        return habitat;
+//    }
+//
+//    public void setHabitat(String habitat) {
+//        this.habitat = habitat;
+//    }
+//
+//    public int getRouteId() {
+//        return routeId;
+//    }
+//
+//    public void setRouteId(int routeId) {
+//        this.routeId = routeId;
+//    }
 }

@@ -61,8 +61,8 @@ public class SpeciesController implements  Controller{
 
     @Override
     @GetMapping("/stats")
-    public JSONObject getEstatisticas() {
-        return null;
+    public long getEstatisticas() {
+        return speciesRepository.count();
     }
 
     @GetMapping("/source/all")

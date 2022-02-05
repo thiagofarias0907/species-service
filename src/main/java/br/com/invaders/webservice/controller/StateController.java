@@ -50,8 +50,8 @@ public class StateController implements Controller {
 
     @GetMapping("/stats")
     @Override
-    public JSONObject getEstatisticas() {
-        return null;
+    public long getEstatisticas() {
+        return stateRepository.count();
     }
 
 

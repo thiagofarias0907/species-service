@@ -43,8 +43,8 @@ public class KingdomController implements Controller {
 
     @GetMapping("/stats")
     @Override
-    public JSONObject getEstatisticas() {
-        return null;
+    public long getEstatisticas() {
+        return kingdomRepository.count();
     }
 
 

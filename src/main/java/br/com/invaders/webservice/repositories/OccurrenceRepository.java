@@ -36,4 +36,15 @@ public interface OccurrenceRepository extends JpaRepository<Occurrence,Long> {
             "  AND (CAST(regexp_replace(longitude_decimal,',','.') AS double) - :longitude)/:longitude between - :precision AND :precision")
     List<Occurrence> findAllNearby(@Param("latitude") double latitude, @Param("longitude") double longitude, @Param("precision") double precision);
 
+    long countBySpecie_Id(long specieId);
+
+    long countBySpecie_KingdomId(long specieId);
+
+    long countBySpecie_Family(String specieId);
+
+    long countBySpecieAndState(long specieId, String state);
+
+    long countBySpecie_IdAndState(long specieId, String state);
+
+    long countBySpecie_Kingdom(String kingdom);
 }

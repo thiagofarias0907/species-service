@@ -1,18 +1,16 @@
 package br.com.invaders.webservice.controller;
 
 import br.com.invaders.webservice.entities.Occurrence;
-import br.com.invaders.webservice.repositories.OccurrenceRepository;
-import net.minidev.json.JSONArray;
-import org.hibernate.service.spi.InjectService;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
+import br.com.invaders.webservice.entities.Statistics;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,7 +26,7 @@ class OccurrenceControllerTest extends  OccurrenceController {
     @Test
     void getSpeciesWithNullFiltersTest() {
         //CT01
-        assertEquals(new JSONArray(),getAllWithFilters(null,null,null));
+        assertEquals(new ArrayList<>(),getAllWithFilters(null,null,null));
     }
 
     @Test
@@ -119,5 +117,39 @@ class OccurrenceControllerTest extends  OccurrenceController {
             return false;
 
         return true;
+    }
+
+    @Test
+    void testGetCountSpeciesOccurrences() throws JSONException {
+        long specieId = 6l;
+        long response = super.getCountSpeciesOccurrences(specieId);
+        assertNotNull(response);
+        assertTrue(response >= 0);
+    }
+
+    @Test
+    void testGetCountKingdomOccurrences() throws JSONException {
+        String kingdom = "Animalia";
+        Long response = super.getCountKingdomOccurrences(kingdom);
+        assertNotNull(response);
+        assertTrue(response >= 0);
+    }
+
+    @Test
+    void testGetCountFamilyOccurrences() throws JSONException {
+        String family = "Fabaceae";
+        long response = super.getCountFamilyOccurrences(family);
+        assertNotNull(response);
+        assertTrue(response >= 0);
+    }
+
+    @Test
+    void testGetCountSpecieByStateOccurrences() throws JSONException {
+        long specieId = 6l;
+        String state = "Santa Catarina";
+        long response = super.getCountSpeciesByStateOccurrences(specieId,state);
+        assertNotNull(response);
+        assertTrue(response >= 0);
+
     }
 }
