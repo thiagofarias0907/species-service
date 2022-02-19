@@ -92,16 +92,23 @@ class OccurrenceControllerTest extends  OccurrenceController {
     }
 
     @Test
-    void getNearbyOccurrence() {
+    void getNearbyOccurrenceTest() {
+        //CT05
         List<Occurrence> occurrences = getAllNearbyOccurrences(centralLat, centralLon,precision);
-        assertNotNull(occurrences);
-        assertTrue(occurrences.size() > 0);
+        assertNotNull(occurrences,"a lista de ocorrências não pode ser null");
+        assertTrue(occurrences.size() > 0,"A lista não pode ser vazia");
         occurrences.forEach(occurrence -> {
             assertTrue(isNearby(occurrence.getLatitudeDecimal(),occurrence.getLongitudeDecimal()));
         });
 
     }
 
+    /**
+     * Calculate if the occurrences listed are beetween the latitude and longitude precision
+     * @param latitude
+     * @param longitude
+     * @return
+     */
     private boolean isNearby(String latitude, String longitude){
 
         if (latitude.isBlank() || longitude.isBlank())
@@ -112,7 +119,6 @@ class OccurrenceControllerTest extends  OccurrenceController {
 
         if ( (lat - centralLat)/ centralLat > precision || (lat - centralLat)/ centralLat < -precision )
             return false;
-
         if ( (lon - centralLon)/ centralLon > precision || (lon - centralLon)/ centralLon < -precision )
             return false;
 
